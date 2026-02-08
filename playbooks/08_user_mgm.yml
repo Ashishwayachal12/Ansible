@@ -1,0 +1,17 @@
+---
+- name: User Mgr
+  hosts: all
+
+  tasks:
+  - name: User Creation
+    user: 
+       name: "{{ item }}"
+       comment: new User adding for SRE team
+       shell: /bin/bash
+       groups: ashishwayachal,nginx
+       state: absent
+       remove: yes
+    loop:
+      - Smith
+      - Sham
+      - king

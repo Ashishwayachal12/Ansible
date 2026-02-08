@@ -1,0 +1,16 @@
+---
+- name: Installing Httpd
+  hosts: all
+
+  tasks:
+  - name: Install httpd on Redhat
+    yum:
+      name: httpd
+      state: present
+    when: ansible_os_family == "RedHat"
+
+  - name: Install httpd on ubuntu
+    apt:
+      name: apache2
+      state: present
+    when: ansible_os_family == "Ubuntu"

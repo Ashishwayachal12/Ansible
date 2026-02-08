@@ -1,0 +1,9 @@
+---
+- name: "First Basic pb"
+  hosts: all
+
+  tasks:
+  - name: Test connectivity
+    ping:
+  - name: "Print output"
+    debug: msg="Alright!!!"

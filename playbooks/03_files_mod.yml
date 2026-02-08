@@ -1,0 +1,17 @@
+---
+- name: File Module
+  hosts: all
+
+  tasks:
+  - name: creating a file
+    file:
+      path: /tmp/newfile.txt
+      state: absent
+      owner: ashishwayachal
+      group: ashishwayachal
+      mode: 0754
+
+  - name: Creting a directory
+    file:
+      path: /tmp/myfolder
+      state: absent

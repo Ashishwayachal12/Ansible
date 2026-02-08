@@ -1,0 +1,13 @@
+---
+- name: Copying file from remote
+  hosts: all
+
+  tasks:
+  - name: Copy files
+    copy: 
+      src: /root/myfile.txt
+      dest: /tmp/
+      owner: ashishwayachal
+      group: ashishwayachal
+      mode: ugo=rw
+      backup: true
